@@ -1,0 +1,12 @@
+name: dispatches
+on:
+  repository_dispatch:
+    types: [event1,event2]
+jobs:
+  dispatches:
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+          echo "Payload: ${{ toJSON(github.event.client_payload) }}"
+        name: Payload
+        if: ${{ github.event_name == 'repository_dispatch' }}
