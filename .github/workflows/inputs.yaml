@@ -23,7 +23,7 @@ on:
         required: true
 jobs:
   Input:
-    run-on: unbuntu-latest
+    runs-on: unbuntu-latest
     steps:
       - run: |
           echo "Homedrive: ${{ inputs.homedrive }}"
